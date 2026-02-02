@@ -1,0 +1,32 @@
+.Layout {
+    /* Changed from 100vh to min-height to allow the page to grow */
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+ }
+ 
+ .Layout > header {
+    width: 100%;
+    /* Removed grid-area to allow natural document flow */
+    margin: 0;
+    padding: 0;
+ }
+
+ .header {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+ }
+
+ .Layout > menu {
+    margin-top: 10px;
+    margin-bottom: 20px;
+ }
+
+ .Layout > main {
+    /* CRITICAL CHANGE: Removed overflow-y: auto */
+    /* This allows the main content to push the whole page down */
+    flex: 1; 
+    margin-top: 10px;
+ }

@@ -1,0 +1,65 @@
+
+.CryptoCard {
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.CryptoCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.card-header span {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+}
+
+.card-image {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.card-image img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.card-footer {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-footer button {
+    flex: 1;
+    padding: 8px 12px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background 0.3s;
+}
+
+.card-footer button:hover {
+    background: #0056b3;
+}
