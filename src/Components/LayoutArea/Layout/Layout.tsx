@@ -41,7 +41,11 @@ export function Layout() {
             </main>
 
             <footer>
-                {/* Footer content */}
+                <div>
+
+                     <p> © 2026 Cryptonite. All rights reserved </p>
+                </div>
+              
             </footer>
         </div>
     );
