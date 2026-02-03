@@ -1,65 +1,98 @@
-
+/* Container for the individual Crypto Card */
 .CryptoCard {
-
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    background: white;
-    border-radius: 10px;
-    padding: 15px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    gap: 15px;
+    /* Deep dark background with glassmorphism effect */
+    background: rgba(20, 21, 26, 0.85); 
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 20px;
+    color: #ffffff;
+    transition: all 0.3s ease;
+    position: relative;
 }
 
+/* Card Hover State */
 .CryptoCard:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-8px);
+    border-color: var(--accent-cyan); /* Uses the cyan variable from index.css */
+    box-shadow: 0 15px 35px rgba(0, 242, 255, 0.15);
 }
 
+/* Header section - Removing any default white backgrounds */
 .card-header {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 4px;
+    background: transparent !important; /* Forces removal of the white block seen in screenshot */
+    padding: 0;
+    margin-bottom: 5px;
 }
 
+/* Currency details text */
 .card-header span {
-    font-size: 14px;
-    font-weight: 500;
-    color: #333;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent-cyan); 
+    letter-spacing: 0.5px;
+    text-transform: capitalize;
 }
 
+/* Centered container for the crypto logo */
 .card-image {
     display: flex;
     justify-content: center;
-    padding: 10px 0;
+    padding: 15px 0;
 }
 
+/* The crypto icon/logo styling */
 .card-image img {
-    width: 80px;
-    height: 80px;
+    width: 65px;
+    height: 65px;
     object-fit: contain;
-    border-radius: 8px;
+    /* Soft glow effect to blend the logo with the dark theme */
+    filter: drop-shadow(0 0 10px rgba(0, 242, 255, 0.25));
+    transition: transform 0.4s ease;
 }
 
+/* Footer section containing buttons and toggle */
 .card-footer {
     display: flex;
-    gap: 10px;
     align-items: center;
     justify-content: space-between;
+    margin-top: auto; /* Pushes footer to the bottom */
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
+/* "More Info" Button - Refined Crystal Style */
 .card-footer button {
-    flex: 1;
-    padding: 8px 12px;
-    background: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
+    padding: 10px 18px;
+    background: rgba(255, 255, 255, 0.1); 
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 11px;
+    text-transform: uppercase;
     cursor: pointer;
-    font-size: 12px;
-    transition: background 0.3s;
+    transition: all 0.3s ease;
 }
 
+/* Button Hover State */
 .card-footer button:hover {
-    background: #0056b3;
+    background: var(--accent-cyan);
+    color: #000000; /* Dark text on bright background for readability */
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.4);
+    border-color: transparent;
+}
+
+/* Follow Label and Toggle styling */
+.card-footer .Toggle-label, 
+.card-footer span:last-child {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 12px;
+    font-weight: 500;
 }

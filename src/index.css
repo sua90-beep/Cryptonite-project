@@ -1,7 +1,93 @@
-html, body, #root {
+:root {
+  /* Crypto Color Palette */
+  --bg-dark: #07080c;
+  --bg-card: #12141d;
+  --accent-cyan: #00f2ff;
+  --accent-violet: #8a2be2;
+  --text-primary: #ffffff;
+  --text-secondary: #94a3b8;
+  --border-color: rgba(255, 255, 255, 0.08);
+  
+  /* Standard Transition */
+  --main-transition: 0.3s ease-in-out;
+}
+
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  height: 100%;
-  text-align: center;
-  
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  font-family: system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+  scroll-behavior: smooth;
+}
+
+/* Container Utility */
+.container {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+
+/* Heading Design */
+h1, h2, h3 {
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+
+/* Glassmorphism Effect - Standard Syntax */
+.crypto-card {
+  background-color: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 24px;
+  transition: transform var(--main-transition), border-color var(--main-transition);
+}
+
+.crypto-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-cyan);
+}
+
+/* Gradient Text - Standard Background Clip */
+.gradient-text {
+  background: linear-gradient(90deg, var(--accent-cyan), var(--accent-violet));
+  background-clip: text;
+  color: transparent;
+  font-weight: bold;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: var(--main-transition);
+}
+
+.btn-primary {
+  background-color: var(--accent-cyan);
+  color: var(--bg-dark);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 0 20px rgba(0, 242, 255, 0.4);
+  filter: brightness(1.1);
+}
+
+/* Data Tables / Grids */
+.data-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }

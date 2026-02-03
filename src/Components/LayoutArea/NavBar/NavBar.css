@@ -1,11 +1,79 @@
 .NavBar {
-	display: flex;
-    flex-direction: row;
-    gap: 40px; 
-    padding-top:20px ;
-
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem 2rem;
+    background-color: var(--bg-card); /* הצבע שהגדרנו ב-index.css */
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
-.NavBar > .active {
-    color: darkblue;
-    font-weight: bold;
+
+/* עיצוב הקישורים */
+.NavBar a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color var(--main-transition), transform var(--main-transition);
+    position: relative;
+}
+
+.NavBar a:hover {
+    color: var(--accent-cyan);
+    transform: translateY(-1px);
+}
+
+/* הדגשת הדף הנוכחי (NavLink של React-Router מוסיף קלאס active אוטומטית) */
+.NavBar a.active {
+    color: var(--accent-cyan);
+    font-weight: 700;
+}
+
+.NavBar a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--accent-cyan);
+    border-radius: 2px;
+    box-shadow: 0 0 8px var(--accent-cyan);
+}
+
+/* עיצוב שורת החיפוש */
+.NavBar input[type="search"] {
+    margin-left: auto; /* דוחף את החיפוש לצד ימין */
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 0.6rem 1rem;
+    color: white;
+    width: 250px;
+    outline: none;
+    transition: all var(--main-transition);
+}
+
+.NavBar input[type="search"]:focus {
+    border-color: var(--accent-cyan);
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.2);
+    width: 300px; /* מתרחב מעט במיקוד */
+}
+
+/* התאמה לניידים */
+@media (max-width: 768px) {
+    .NavBar {
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+    }
+    
+    .NavBar input[type="search"] {
+        margin-left: 0;
+        width: 100%;
+        order: 3; /* מעביר את החיפוש לשורה מתחת בטלפון */
+    }
 }

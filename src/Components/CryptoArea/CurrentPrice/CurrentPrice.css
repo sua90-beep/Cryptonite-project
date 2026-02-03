@@ -1,69 +1,77 @@
-/* Dark background overlay */
+/* The semi-transparent background covering the whole screen */
 .CurrentPriceOverlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.7); /* Glassmorphism effect */
-    backdrop-filter: blur(5px);
+    background: rgba(0, 0, 0, 0.7); /* Darker overlay */
+    backdrop-filter: blur(8px); /* Blur effect on everything behind */
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000;
+    z-index: 9999; /* Ensure it's on top of everything */
+    padding: 20px;
 }
 
-/* The card itself */
+/* The Modal Card */
 .price-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    width: 300px;
+    background: rgba(30, 41, 59, 0.95); /* Deep slate background */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 40px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
     text-align: center;
-    position: relative;
 }
 
-
-
-.close-x {
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: #888;
-}
-
+/* Price Content Layout */
 .price-content {
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    margin-bottom: 25px;
+    gap: 20px;
+    margin-bottom: 30px;
 }
 
+/* Individual Price Items */
 .price-item {
     display: flex;
     justify-content: space-between;
-    font-size: 1.2rem;
-    font-weight: bold;
+    align-items: center;
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.label {
-    color: #666;
-    font-weight: normal;
+.price-item .label {
+    font-weight: 700;
+    color: var(--accent-cyan);
+    font-size: 0.9rem;
+    letter-spacing: 1px;
 }
 
+.price-item .value {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+/* Close Button */
 .btn-close {
     width: 100%;
-    padding: 10px;
-    background: #2196F3;
-    color: white;
+    padding: 14px;
+    background: #ffffff;
+    color: #000000;
     border: none;
-    border-radius: 5px;
+    border-radius: 12px;
+    font-weight: 700;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: all 0.2s ease;
 }
 
 .btn-close:hover {
-    background: #1976D2;
+    background: var(--accent-cyan);
+    transform: scale(1.02);
 }
